@@ -3,9 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>Matt Janda</Authors>
-    <Description>Provides Logging extensions for RightTurn start-up container.</Description>
+    <PackageIcon>Turn.png</PackageIcon>
+    <PackageId>RightTurn.Extensions.Logging</PackageId>
+    <Product>RightTurn.Extensions.Logging</Product>
+    <Description>Provides logging extensions for RightTurn start-up container.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>rightturn start-up container application main logging configuration exceptions commandline command line</PackageTags>
+    <PackageTags>right turn start-up container application main logging configuration exceptions commandline command line</PackageTags>
+    <RepositoryUrl>https://github.com/Jandini/RightTurn.Extensions.Logging</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -23,6 +27,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\res\Turn.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
