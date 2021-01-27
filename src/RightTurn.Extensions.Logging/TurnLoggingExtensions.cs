@@ -10,11 +10,12 @@ namespace RightTurn.Extensions.Logging
         /// Add ITurnLogging to directions container. 
         /// This will trigger logging builder Action<ILoggingBuilder> if present in directions container.
         /// This extension is helper extenions for other extensions like serilog. 
-        /// If you use the overload with the Action<ILoggingBuilder> parameter the logging will be added automatically.
+        /// Existing WithLogging methods are calling AddLogging.
+        /// If you build your own WithLogging remember to call AddLogging within. 
         /// </summary>
         /// <param name="turn"></param>
         /// <returns></returns>
-        public static ITurn WithLogging(this ITurn turn)
+        public static ITurn AddLogging(this ITurn turn)
         {
             turn.Directions.Add<ITurnLogging>(new TurnLogging());
             return turn;
@@ -24,7 +25,7 @@ namespace RightTurn.Extensions.Logging
         public static ITurn WithLogging(this ITurn turn, Action<ILoggingBuilder> logging)
         {
             turn.Directions.Add(logging);
-            turn.WithLogging();
+            turn.AddLogging();
             return turn;
         }
 
@@ -40,6 +41,7 @@ namespace RightTurn.Extensions.Logging
         public static ITurn WithLogging(this ITurn turn, Action<ILoggingBuilder, ITurn> loggingWithTurn)
         {
             turn.Directions.Add<Action<ILoggingBuilder>>((logging) => loggingWithTurn.Invoke(logging, turn));
+            turn.AddLogging();
             return turn;
         }
 
