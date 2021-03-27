@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/Jandini/RightTurn.Extensions.Logging/compare/0.1.0...0.2.0) (2021-03-27)
+
+
+### Features
+
+* Improve logging extensions ([f2d01d0](https://github.com/Jandini/RightTurn.Extensions.Logging/commit/f2d01d014924032b3b35b9dea6e2a253e14d0ae7))
+
 ## 0.1.0 (2021-03-21)
 
 
